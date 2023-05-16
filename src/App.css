@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  --light-grey: hsl(0, 0%, 86%);
+  --off-white: hsl(0, 0%, 94%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+}
+
+@media only screen and (min-width: 768px) {
+  /* for desktop */
+  .bk {
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+  }
+
+  .appContainerParent {
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 230px;
+    width: 890px;
+    height: 690px;
+  }
+
+  .appContainer{
+    width: 800px;
+    height: 600px;
+    padding-left: 16px;
+    padding-top: 11px;
+  }
+
+  .ageInput {
+    margin-top: 0px;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .inputTitle {
+    font-size: 15px;
+    letter-spacing: 3.5px;
+    color: var(--smokey-grey);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .error {
+    color: var(--light-red);
+  }
+
+  .inputError {
+    border-color: var(--light-red);
+  }
+
+  .errorText {
+    color: var(--light-red);
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .inputContainer {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3px;
+  }
+
+  input {
+    font-size: 32px;
+    border-radius: 8px;
+    outline: none;
+    height: 77px;
+    width: 170px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: var(--light-grey);
+    padding-left: 20px;
+  }
+
+  input:focus {
+    border-color: var(--purple);
+    border-width: 1px;
+  }
+
+  .graphicContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 774px;
+  }
+
+  .line-wrapper {
+    position: relative;
+    width: 690px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gray-line {
+    height: 2.5px;
+    background-color: var(--off-white);
+    width: 100%;
+  }
+  
+  .cal-button {
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-inline: auto;
+  }
+
+  .cal-button:hover{
+    background-color: hsl(259, 100%, 70%);
+  }
+
+  .cal-button:active{
+    background-color: hsl(259, 100%, 0%);
+  }
+
+  .image {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeOutput {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .timeOutputContainer {
+    display: flex;
+    justify-content: left;
+    font-size: 100px;
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  .resultTime {
+    color: var(--purple);
+    margin-bottom: -40px;
+    margin-right: 18px;
+    display: block;
+    letter-spacing: -4px;
+  }
+
+  .resultLabel {
+    color: black;
+    letter-spacing: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* for mobile */
+  .bk {
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center; 
+    height: 100vh;
+  }
+
+  .appContainerParent {
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 130px;
+    width: 375px;
+    height: 550px;
+  }
+
+  .appContainer{
+    width: 350px;
+    height: 600px;
+    padding-left: 16px;
+    padding-top: 75px;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .inputTitle {
+    font-size: 15px;
+    letter-spacing: 3.5px;
+    color: var(--smokey-grey);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .error {
+    color: var(--light-red);
+  }
+
+  .inputError {
+    border-color: var(--light-red);
+  }
+
+  .errorText {
+    color: var(--light-red);
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .inputContainer {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3px;
+  }
+
+  input {
+    font-size: 24px;
+    border-radius: 8px;
+    outline: none;
+    height: 75px;
+    width: 100px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: var(--light-grey);
+    padding-left: 18px;
+  }
+
+  input:focus {
+    border-color: var(--purple);
+    border-width: 1px;
+  }
+
+  .graphicContainer {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 322px;
+    margin-top: 40px;
+  }
+
+  .line-wrapper {
+    position: absolute;
+    width: 322px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 41px;
+  }
+
+  .gray-line {
+    height: 2.5px;
+    background-color: var(--off-white);
+    width: 100%;
+  }
+
+  .cal-button {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-inline: auto;
+  }
+
+  .cal-button:hover{
+    background-color: hsl(259, 100%, 70%);
+  }
+
+  .cal-button:active{
+    background-color: hsl(259, 100%, 0%);
+  }
+
+  .image {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: auto;
+  }
+
+  .timeOutput {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .timeOutputContainer {
+    display: flex;
+    justify-content: left;
+    font-size: 54px;
+    font-weight: 800;
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  .resultTime {
+    color: var(--purple);
+    margin-bottom: -40px;
+    margin-right: 18px;
+    display: block;
+    letter-spacing: -4px;
+  }
+
+  .resultLabel {
+    color: black;
+    letter-spacing: 0px;
+  }
+}
