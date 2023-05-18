@@ -17,11 +17,11 @@ function DateInput({ onDateChange }) {
   useEffect(() => {
     clearTimeout(timeoutID.current); // timer for finalizing date input
     timeoutID.current = setTimeout(() => {
-      console.log("DateInput: " + dayInput);
       const errors = isValidDate(dayInput, monthInput, yearInput);
       const isValid = errors.length === 0 ? true : false;
       if (isValid) {
-        const newDateString = monthInput + "/" + dayInput + "/" + yearInput;
+        const newDateString =
+          monthInput + "/" + dayInput + "/" + yearInput.padStart(4, "0");
         onDateChange(newDateString);
       } else {
         onDateChange(null);
@@ -30,7 +30,7 @@ function DateInput({ onDateChange }) {
       setMonthError(errors.includes("month") ? true : false);
       setYearError(errors.includes("year") ? true : false);
       setDateError(errors.includes("date") ? true : false);
-    }, 200);
+    }, 300);
   }, [dayInput, monthInput, yearInput, onDateChange]);
 
   const handleDayInputChange = (value) => {
@@ -238,6 +238,9 @@ export default function AgeInput() {
   const [outputDate, setOutputDate] = useState(null);
 
   function handleDateChange(newDateString) {
+    if (newDateString != null) {
+      if (newDateString.includes("-")) newDateString = null;
+    }
     setSelectedDate(newDateString);
   }
 
