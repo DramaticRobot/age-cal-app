@@ -17,6 +17,7 @@ function DateInput({ onDateChange }) {
   useEffect(() => {
     clearTimeout(timeoutID.current); // timer for finalizing date input
     timeoutID.current = setTimeout(() => {
+      console.log("DateInput: " + dayInput);
       const errors = isValidDate(dayInput, monthInput, yearInput);
       const isValid = errors.length === 0 ? true : false;
       if (isValid) {

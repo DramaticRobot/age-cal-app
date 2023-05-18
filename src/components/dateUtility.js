@@ -6,6 +6,8 @@ export function isValidDate(dayInput, monthInput, yearInput) {
   const month = parseInt(monthInput); 
   const year = parseInt(yearInput); 
 
+  console.log("isValidDate: " + dayInput);
+
   // Check if the month is valid
   if (isNaN(Number(monthInput)) && monthInput != "-") {
     errors.push("month");
