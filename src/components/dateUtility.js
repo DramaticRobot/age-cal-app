@@ -7,7 +7,7 @@ export function isValidDate(dayInput, monthInput, yearInput) {
   const year = parseInt(yearInput); 
 
   // Check if the month is valid
-  if (isNaN(Number(monthInput))) {
+  if (isNaN(Number(monthInput)) && monthInput != "-") {
     errors.push("month");
   }
   else if (month < 1 || month > 12 || isNaN(month)) {
@@ -16,7 +16,7 @@ export function isValidDate(dayInput, monthInput, yearInput) {
   }
 
   // Check if the day is valid
-  if (isNaN(Number(dayInput))) {
+  if (isNaN(Number(dayInput)) && dayInput != "-") {
     errors.push("day");
   }
   else if (day < 1 || day > 31 || isNaN(day)) {
@@ -30,7 +30,7 @@ export function isValidDate(dayInput, monthInput, yearInput) {
 
   // Check if the year is valid
   const currentDate = new Date();
-  if (isNaN(Number(yearInput))) {
+  if (isNaN(Number(yearInput))&& yearInput != "-") {
     errors.push("year");
   }
   else if (year > currentDate.getFullYear() || isNaN(year)) {
