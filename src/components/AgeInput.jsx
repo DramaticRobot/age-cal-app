@@ -62,7 +62,9 @@ function DateInput({ onDateChange }) {
             error={dayError || dateError}
           />
           {dayError && <div className="errorText">Must be a valid day</div>}
-          {dateError && <div className="errorText">Must be a valid date</div>}
+          {dateError && !dayError && (
+            <div className="errorText">Must be a valid date</div>
+          )}
         </div>
 
         <div className="inputContainer">
@@ -99,6 +101,9 @@ function DateInput({ onDateChange }) {
           {yearError && <div className="errorText">Must be in the past</div>}
         </div>
       </div>
+      {!dayError && !dateError && !monthError && !yearError && (
+        <div className="errorGap" />
+      )}
     </>
   );
 }
